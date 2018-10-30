@@ -4,7 +4,8 @@ published in Rydgren et al. 2018 J.Appl.Ecol. (https://doi.org/10.1111/1365-2664
 
 ---
 
-## DiMat: creation of (n-dimensional) distance matrix from an ordination object based on plot group=factor affiliation of study plots
+## DiMat
+creation of (n-dimensional) distance matrix from an ordination object based on plot group=factor affiliation of study plots
 
 ### Description:
 Function 'DiMat' extracts study plot scores from an ordination object (DCA or NMDS) and creates a (n-dimensional) distance matrix (Euclidean distances are default)
@@ -28,7 +29,8 @@ Output is a distance matrix, i.e. an object of class 'dist'.
 
 ---
 
-## DiGroup: grouping of distances from the full distance matrix ('DiMat') based on plot group=factor affiliation of study plots
+## DiGroup
+grouping of distances from the full distance matrix ('DiMat') based on plot group=factor affiliation of study plots
 
 ### Description:
 Function 'DiGroup' partitions output distance matrix from 'DiMat', returning a list of plot group=factor-wise matrices of distances of study plots to their plot group=factor centroid.
