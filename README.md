@@ -14,13 +14,13 @@ Centroids can be supplied manually (as data frame with centroid scores for all d
 through function ['ordispider'](https://www.rdocumentation.org/packages/vegan/versions/2.4-2/topics/ordihull "'ordispider' documentation") from ['vegan'-package](https://cran.r-project.org/package=vegan "vegan: Community Ecology Package").
 
 ### Usage:
-DiMat(ord, gc, gf, ndim, met="euclidean",...)
+DiMat(ord, gc, gf, ndim=1, met="euclidean",...)
 
 ### Arguments:
 'ord' - ordination object (DCA or NMDS) from 'vegan'-package  
 'gc' - data frame with axis scores centroids of all plot groups=factors, as many dimensions (i.e. columns) as ordination axes, ordered after levels of 'gf'  
 'gf' - vector with plot group=factor affiliation of points (i.e. study plots), as many entries as points  
-'ndim' - number of dimensions (i.e. ordination axes) for which distances should be calculated  
+'ndim' - number of dimensions (i.e. ordination axes) for which distances should be calculated (default=1 i.e. the first ordination axis)  
 'met' - method for distance matrix calculation, possible values=all 'dist' methods (default=Euclidean)  
 '...' - other arguments passed on (especially plot weighing (argument 'w') and centroid- or spatial median-selection (argument 'spiders') for 'ordispider'-function)  
 
