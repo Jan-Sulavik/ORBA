@@ -1,27 +1,22 @@
 ####ORBA - DiMat (n-dimensional distance matrix from ordination object)####
 
-DiMat<-function (ord, gc, gf, ndim, met="euclidean",...)  
+DiMat<-function (ord, gc, gf, ndim=1, met="euclidean",...)  
   #'ord' - ordination object (DCA or NMDS) from 'vegan';
   #'gc' - data frame with axis scores centroids of all plot groups=factors, as many dimensions (i.e. columns) as ordination axes, ordered after levels of 'gf'; 
   #'gf' - vector with plot group=factor affiliation of points (i.e. study plots), as many entries as points;
-  #'ndim' - number of dimensions (i.e. ordination axes) for which distances should be calculated;
+  #'ndim' - number of dimensions (i.e. ordination axes) for which distances should be calculated (default=1 i.e. the first ordination axis);
   #'met' - method for distance matrix calculation, possible values=all 'dist' methods (default=Euclidean)
   #'...' - other arguments passed on (especially plot weighing (argument 'w') and centroid- or spatial median-selection (argument 'spiders') for 'ordispider'-function)
 { 
-  ##check if n-dim isn't nonsense (i.e.>max. number of dimensions)
-  if (ndim>ncol(allscor)) stop ("Number of dimensions requested > max. number of dimensions in ordination","\n")
-  
   ##select which type ordination (DCA or NMDS) + extract scores
   if (any(attr(ord,"class")=="decorana")){
-    ordscores<-as.data.frame(cbind(scores(ord,display="sites",origin=F)[,1:4]))} #origin=F is important
+    ordscores<-as.data.frame(cbind(vegan::scores(ord,display="sites",origin=F)[,1:4]))} #origin=F is important
   if (any(attr(ord,"class")=="monoMDS")){
     ordscores<-as.data.frame(cbind(ord$points))}
   
-  ##if dimensionality is not specified, 1D (i.e. the first ordination axis) will be used
-  if (missing (ndim)) {
-    message("Dimensionality not specified, set to 1D (i.e. first ordination axis)")
-    ndim<-1
-  }
+  ##check if n-dim isn't nonsense (i.e.>max. number of dimensions)
+  if (ndim>ncol(ordscores)) stop ("Number of dimensions requested > max. number of dimensions in ordination","\n")
+  
   ##if centroids are not supplied, 'DiMat' will calculate its own from 'ordispider' (plot is necessary, empty created)
   if (missing(gc))  {
     message("Plot group=factor centroids calculated by function 'ordispider' from 'vegan'-package")
