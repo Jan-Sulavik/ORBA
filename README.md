@@ -1,5 +1,5 @@
 # ORBA
-Auxiliary functions for ordination-and-regression based approach (ORBA),
+Auxiliary R functions for ordination regression-based approach (ORBA),
 published in Rydgren et al. 2018 J.Appl.Ecol. (https://doi.org/10.1111/1365-2664.13254)
 
 ---
@@ -8,10 +8,11 @@ published in Rydgren et al. 2018 J.Appl.Ecol. (https://doi.org/10.1111/1365-2664
 creation of (n-dimensional) distance matrix from an ordination object based on plot group=factor affiliation of study plots
 
 ### Description:
-Function 'DiMat' extracts study plot scores from an ordination object (DCA or NMDS) and creates a (n-dimensional) distance matrix (Euclidean distances are default)
+Function 'DiMat' extracts study plot scores from an ordination object (DCA or NMDS) from 'vegan' and creates a (n-dimensional) distance matrix (Euclidean distances are default)
 between all study plots and all centroids of plot groups=factors.  
 Centroids can be supplied manually (as data frame with centroid scores for all dimensions=ordination axes), or can be obtained internally
 through function ['ordispider'](https://www.rdocumentation.org/packages/vegan/versions/2.4-2/topics/ordihull "'ordispider' documentation") from ['vegan'-package](https://cran.r-project.org/package=vegan "vegan: Community Ecology Package").
+Note that 'DiMat' requires installed 'vegan'-package to function properly.
 
 ### Usage:
 DiMat(ord, gc, gf, ndim=1, met="euclidean",...)
