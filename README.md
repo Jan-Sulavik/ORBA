@@ -11,7 +11,7 @@ creation of (n-dimensional) distance matrix from an ordination object based on p
 Function 'DiMat' extracts study plot scores from an ordination object (DCA or NMDS) and creates a (n-dimensional) distance matrix (Euclidean distances are default)
 between all study plots and all centroids of plot groups=factors.  
 Centroids can be supplied manually (as data frame with centroid scores for all dimensions=ordination axes), or can be obtained internally
-through function ['ordispider'](https://www.rdocumentation.org/packages/vegan/versions/2.4-2/topics/ordihull "'ordispider' documentation") from ['vegan'-package](https://cran.r-project.org/web/packages/vegan/index.html "vegan: Community Ecology Package").
+through function ['ordispider'](https://www.rdocumentation.org/packages/vegan/versions/2.4-2/topics/ordihull "'ordispider' documentation") from ['vegan'-package](https://cran.r-project.org/package=vegan "vegan: Community Ecology Package").
 
 ### Usage:
 DiMat(ord, gc, gf, ndim, met="euclidean",...)
