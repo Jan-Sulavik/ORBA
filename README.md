@@ -2,6 +2,8 @@
 Auxiliary R functions for ordination regression-based approach (ORBA),
 published in Rydgren et al. 2018 J.Appl.Ecol. (https://doi.org/10.1111/1365-2664.13254)
 
+Functions can be referred to via Zenodo DOI:
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1487823.svg)](https://doi.org/10.5281/zenodo.1487823)
 ---
 
 ## DiMat
